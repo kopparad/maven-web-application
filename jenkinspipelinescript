@@ -2,6 +2,8 @@ node{
 
 def mavenHome = tool name: 'Maven3.8.6'
 
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
+
 echo "Jenkins url is: ${env.JENKINS_URL}"
 echo "Node Name is: ${env.NODE_NAME}"
 echo "Job name is: ${env.JOB_NAME}"
